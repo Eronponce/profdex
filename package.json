@@ -1,10 +1,13 @@
 {
   "scripts": {
     "dev": "npm-run-all2 --parallel dev:front dev:back dev:landing",
+    "dev:app": "npm-run-all2 --parallel dev:front dev:back",
     "dev:front": "npm run dev --prefix profdex-front",
     "dev:back": "npm run start:dev --prefix profdex-back",
     "dev:landing": "npm run dev --prefix profdex-landing",
-    "dev:all": "npm run dev"
+    "dev:all": "npm run dev",
+    "local": "node scripts/ambiente-local.mjs && npm run dev:app",
+    "local:seed": "node scripts/ambiente-local.mjs --seed"
   },
   "dependencies": {
     "@google/model-viewer": "^4.3.1"

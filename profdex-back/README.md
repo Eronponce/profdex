@@ -11,6 +11,14 @@ por WebSocket).
 
 ## Configuração
 
+**Atalho:** na raiz do repositório, `npm run local` faz tudo desta seção
+(dependências, `.env` local, Postgres no Docker, migrations, seed e as contas de
+teste `ana`, `bia` e `dex` com capturas) e sobe o front e o back. Na segunda
+vez, ele só sobe. `npm run local:seed` refaz o seed. Ver
+[`scripts/ambiente-local.mjs`](../scripts/ambiente-local.mjs).
+
+O passo a passo manual:
+
 ```bash
 npm install
 cp .env.example .env    # preencha os valores

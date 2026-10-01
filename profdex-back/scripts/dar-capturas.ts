@@ -39,8 +39,11 @@
 import { PrismaClient } from '@prisma/client';
 import { buildMoveset } from '../src/battle/engine/moves';
 import { typeKeyOf } from '../src/battle/engine/types';
+import { requireDatabaseUrl } from './db-url';
 
-const db = new PrismaClient();
+const db = new PrismaClient({
+  datasources: { db: { url: requireDatabaseUrl() } },
+});
 
 const MATRICULA = process.env.MATRICULA ?? '';
 const SLUGS = (process.env.SLUGS ?? '')
